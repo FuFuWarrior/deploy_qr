@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of films</title>
+</head>
+<body>
+    <h1 style="display: flex; justify-content: center;">List of films</h1>
+    <div id="container"></div>
+
+    <script>
+         async function getQr() {
+            const response = await fetch("http://127.0.0.1:3333/films/get-films");
+            const data = await response.json();
+            console.log('work')
+            for(arr of data.data){
+                const imgTag = document.createElement('img')
+                const title = document.createElement('h3')
+                const div = document.createElement('div')
+                title.style = "display: flex; justify-content: center;"
+                title.append(arr.Title)
+                div.style = "display: flex; justify-content: center;"
+                imgTag.src = arr.Images[0]
+                imgTag.width = 400
+                imgTag.height = 400
+                div.append(imgTag)
+                const con = document.getElementById('container')
+                con.append(title,div)
+            }
+        }
+        getQr()
+    </script>
+</body>
+</html>
