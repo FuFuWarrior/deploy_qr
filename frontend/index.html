@@ -20,7 +20,7 @@
             const data = await response.json();
             document.getElementById('qr').src = data.qrCode
         }
-
+        getQr()
         const myTimeout = setInterval(getQr, 10000);
 
         // function myStopFunction() {
