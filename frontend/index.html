@@ -16,15 +16,12 @@
     <script>
         // make a set timeout that sents a request ever 10 seconds
         async function getQr() {
-            // 'https://fufuwarrior.github.io/qr_generator/frontend/films
-            // http://127.0.0.1:3333/qr/generate
-            // https://qrgenerator-production-ce32.up.railway.app/
             const response = await fetch("https://deployqr-production.up.railway.app/qr/generate");
             const data = await response.json();
             document.getElementById('qr').src = data.qrCode
         }
 
-        const myTimeout = setInterval(getQr, 1000);
+        const myTimeout = setInterval(getQr, 10000);
 
         // function myStopFunction() {
         // clearInterval(myTimeout);
