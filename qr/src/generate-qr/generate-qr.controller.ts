@@ -8,13 +8,13 @@ export class GenerateQrController {
   @Get('generate')
   generate() {
     const links: string[] = [
-      'https://cutt.ly/9wmNGvt0',
-      'https://cutt.ly/mwmNG6O0',
-      'https://cutt.ly/OwmNHj2G',
-      'https://cutt.ly/uwm86CFa',
-      'https://cutt.ly/1wm4qbsg',
-      'https://cutt.ly/dwm4qZrK',
-      'https://fufuwarrior.github.io/qr_generator/frontend/films',
+      'https://cutt.ly/mwm6TGwJ',
+      'https://cutt.ly/qwm6T91d',
+      'https://cutt.ly/4wm6Yp3D',
+      'https://cutt.ly/mwm6UTzD',
+      'https://cutt.ly/Cwm6UCqV',
+      'https://cutt.ly/nwm6ItBN',
+      'https://fufuwarrior.github.io/deploy_qr/frontend/films',
     ];
     const count: number = Math.floor(Math.random() * links.length);
     return this.generateQrService.generateQR(links[count]);
